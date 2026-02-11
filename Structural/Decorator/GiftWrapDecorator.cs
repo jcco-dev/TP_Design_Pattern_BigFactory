@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TP_Design_Pattern.Creational.FactoyMethod;
+using TP_Design_Pattern.Creational.FactoryCentral;
 
 namespace TP_Design_Pattern.Structural.Decorator
 {

@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TP_Design_Pattern.Creational.FactoryCentral;
 
-namespace TP_Design_Pattern.Creational.FactoyMethod
+namespace TP_Design_Pattern.Creational.FactoryCentral
 {
     internal class Train : IToy
     {

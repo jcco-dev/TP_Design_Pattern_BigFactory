@@ -12,3 +12,4 @@ C:\Users\Administrateur\Desktop\asp.net\11-Designs patterrn & architectures\Demo
 C:\Users\Administrateur\Desktop\asp.net\11-Designs patterrn & architectures\DemoDesignPattern\DemoDesignPattern\TP_Design_Pattern\obj\Debug\net10.0\TP_Design_Pattern.pdb
 C:\Users\Administrateur\Desktop\asp.net\11-Designs patterrn & architectures\DemoDesignPattern\DemoDesignPattern\TP_Design_Pattern\obj\Debug\net10.0\TP_Design_Pattern.genruntimeconfig.cache
 C:\Users\Administrateur\Desktop\asp.net\11-Designs patterrn & architectures\DemoDesignPattern\DemoDesignPattern\TP_Design_Pattern\obj\Debug\net10.0\ref\TP_Design_Pattern.dll
+C:\Users\Administrateur\Desktop\asp.net\11-Designs patterrn & architectures\DemoDesignPattern\DemoDesignPattern\TP_Design_Pattern\obj\Debug\net10.0\TP_Design_Pattern.sourcelink.json
