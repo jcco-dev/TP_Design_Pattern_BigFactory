@@ -5,7 +5,7 @@ using TP_Design_Pattern.Workshop;
 
 namespace TP_Design_Pattern.Behavioral.Observer
 {
-    internal interface IElfObserver
+    public interface IElfObserver
     {
         void Update(ProductionStep step, string message);
     }

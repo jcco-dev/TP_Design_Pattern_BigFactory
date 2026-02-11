@@ -1,26 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TP_Design_Pattern.Behavioral.Observer;
+﻿using TP_Design_Pattern.Behavioral.Observer;
 using TP_Design_Pattern.Creational.FactoryCentral;
 using TP_Design_Pattern.Structural.Decorator;
 
 namespace TP_Design_Pattern.Workshop
 {
-    internal class SantaWorkshop
+    public class SantaWorkshop
     {
         private readonly WorkshopNotifier _notifier;
+        private readonly BigToyFactory _factory;
 
-        public SantaWorkshop(WorkshopNotifier notifier) => _notifier = notifier;
+        public SantaWorkshop(WorkshopNotifier notifier, BigToyFactory factory)
+        {
+            _notifier = notifier;
+            _factory = factory;
+        }
 
         public IToy ProduceToy(
-        ToyType type,
-        bool giftWrap,
-        bool glitter,
-        string? personalizedName)
-        
+            ToyType type,
+            bool giftWrap,
+            bool glitter,
+            string? personalizedName)
         {
-            IToy toy = ToyFactory.CreateToy(type);
+            IToy toy = _factory.CreateToy(type);
 
             _notifier.Notify(ProductionStep.Created, $"Jouet créé: {toy.Name}");
 
@@ -33,8 +34,12 @@ namespace TP_Design_Pattern.Workshop
             if (giftWrap)
                 toy = new GiftWrapDecorator(toy);
 
+            _notifier.Notify(ProductionStep.Decorated, $"Décorations: {toy.GetDescription()}");
+            _notifier.Notify(ProductionStep.Packed, $"Emballé. Prix: {toy.GetPrice():0.00}€");
+            _notifier.Notify(ProductionStep.Shipped, "Expédié ");
+
             return toy;
         }
     }
-
 }
+

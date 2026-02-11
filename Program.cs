@@ -3,42 +3,23 @@ using TP_Design_Pattern.Behavioral.Observer;
 using TP_Design_Pattern.Creational.FactoryCentral;
 using TP_Design_Pattern.Workshop;
 
-// 1) Notifier + lutins (Observer)
 var notifier = new WorkshopNotifier();
 notifier.Subscribe(new Elf("Tic"));
 notifier.Subscribe(new Elf("Tac"));
 notifier.Subscribe(new Elf("Toc"));
 
-// 2) Atelier (Workshop)
-var workshop = new SantaWorkshop(notifier);  
+var bigFactory = new BigToyFactory();
 
-// 3) Produire différents jouets (FactoryCentral + Decorator)
-var finalToy = workshop.ProduceToy(
-    ToyType.TeddyBear,
-    giftWrap: true,
-    glitter: true,
-    personalizedName: "Yasmine"
-);
+var workshop = new SantaWorkshop(notifier, bigFactory);
 
-var finalToy1 = workshop.ProduceToy(
-    ToyType.Doll,
-    giftWrap: true,
-    glitter: true,
-    personalizedName: "Yoyo"
-);
+var toy1 = workshop.ProduceToy(ToyType.TeddyBear, giftWrap: true, glitter: true, personalizedName: "Yasmine");
+var toy2 = workshop.ProduceToy(ToyType.Doll, giftWrap: true, glitter: true, personalizedName: "Yoyo");
+var toy3 = workshop.ProduceToy(ToyType.Train, giftWrap: true, glitter: true, personalizedName: "Joujou");
 
-var finalToy2 = workshop.ProduceToy(
-    ToyType.Train,
-    giftWrap: true,
-    glitter: true,
-    personalizedName: "Joujou"
-);
-
-// 4) Affichage récap
 Console.WriteLine("\n--- Récap final ---");
-PrintToy(finalToy);
-PrintToy(finalToy1);
-PrintToy(finalToy2);
+PrintToy(toy1);
+PrintToy(toy2);
+PrintToy(toy3);
 
 static void PrintToy(IToy toy)
 {
@@ -46,4 +27,5 @@ static void PrintToy(IToy toy)
     Console.WriteLine($"  Desc: {toy.GetDescription()}");
     Console.WriteLine($"  Prix: {toy.GetPrice():0.00}€\n");
 }
+
 

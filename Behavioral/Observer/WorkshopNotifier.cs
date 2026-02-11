@@ -5,7 +5,7 @@ using TP_Design_Pattern.Workshop;
 
 namespace TP_Design_Pattern.Behavioral.Observer
 {
-    internal class WorkshopNotifier
+    public class WorkshopNotifier
     {
         private readonly List<IElfObserver> _observers = new();
 

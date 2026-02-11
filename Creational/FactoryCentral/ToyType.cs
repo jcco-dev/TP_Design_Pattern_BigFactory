@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TP_Design_Pattern.Creational.FactoryCentral
 {
-    internal enum ToyType
+    public enum ToyType
     {
         TeddyBear,
         Doll,

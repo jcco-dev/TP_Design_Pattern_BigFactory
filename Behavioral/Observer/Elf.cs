@@ -5,7 +5,7 @@ using TP_Design_Pattern.Workshop;
 
 namespace TP_Design_Pattern.Behavioral.Observer
 {
-    internal class Elf : IElfObserver
+    public class Elf : IElfObserver
     {
         public string Name { get; }
         public Elf(string name) => Name = name;
